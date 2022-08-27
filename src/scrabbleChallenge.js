@@ -1,3 +1,11 @@
+let level1 = ["A", "E", "I", "O", "U", "L", "N","R", "S", "T"]
+let level2 = ["D", "G"]
+let level3 = ["B", "C", "M", "P"]
+let level4 = ["F", "H", "V", "W", "Y"]
+let level5 = ["K"]
+let level6 = ["J", "X"]
+let level7 = ["Q", "Z"]
+
 class Scrabble{
     constructor(str){
         if(str == null){
@@ -8,13 +16,7 @@ class Scrabble{
     }
     score(){
         let score = 0
-        let level1 = ["A", "E", "I", "O", "U", "L", "N","R", "S", "T"]
-        let level2 = ["D", "G"]
-        let level3 = ["B", "C", "M", "P"]
-        let level4 = ["F", "H", "V", "W", "Y"]
-        let level5 = ["K"]
-        let level6 = ["J", "X"]
-        let level7 = ["Q", "Z"]
+        
         for(let i = 0; i < this.str.length; i++){
             if(level1.includes(this.str[i])){
                 score += 1
@@ -38,6 +40,7 @@ class Scrabble{
     }
 }
 
+// All test cases past
 let scrabble1 = new Scrabble('')
 scrabble1.score() // => 0
 
