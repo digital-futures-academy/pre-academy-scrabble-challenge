@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const letterPoints = {
   a: 1,
@@ -32,7 +32,7 @@ const letterPoints = {
 class Scrabble {
   constructor(word) {
     if (word === null) {
-      this.word = '';
+      this.word = "";
     } else {
       this.word = word.toLowerCase();
       // Ensure all letters in the given word are lower case to fulfil strict equality
@@ -102,26 +102,28 @@ class Scrabble {
   }
 }
 
-let test1 = new Scrabble('');
+let test1 = new Scrabble("");
 test1.score(); // => 0
 
-let test2 = new Scrabble(' \t\n');
+let test2 = new Scrabble(" \t\n");
 test2.score(); // => 0
 
 let test3 = new Scrabble(null);
 test3.score(); // => 0
 
-let test4 = new Scrabble('a');
+let test4 = new Scrabble("a");
 test4.score(); // => 1
 
-let test5 = new Scrabble('f');
+let test5 = new Scrabble("f");
 test5.score(); // => 4
 
-let test6 = new Scrabble('street');
+let test6 = new Scrabble("street");
 test6.score(); // => 6
 
-let test7 = new Scrabble('quirky');
+let test7 = new Scrabble("quirky");
 test7.score(); // => 22
 
-let test8 = new Scrabble('OXYPHENBUTAZONE');
+let test8 = new Scrabble("OXYPHENBUTAZONE");
 test8.score(); // => 41
+
+export default Scrabble;
