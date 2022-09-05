@@ -70,9 +70,9 @@ class Scrabble {
         }
       }
     }
-    console.log(
-      `${doubleLetter} | ${tripleLetter} | ${doubleWord} | ${tripleWord}`
-    );
+    // console.log(
+    //   `${doubleLetter} | ${tripleLetter} | ${doubleWord} | ${tripleWord}`
+    // );
     let totalScore = currentScore + accumulator;
     if (currentScore === 0) {
       console.log(
