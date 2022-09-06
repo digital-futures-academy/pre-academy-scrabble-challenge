@@ -53,7 +53,7 @@ class Scrabble {
       currentScore += letterPoints[this.word[i]] || 0;
       // Iterate through the given word; check each letter against the key value pairs in the letterPoints object.
       // Assign and add up the appropriate points at the given indexes, or assign 0 if unknown characters are found or string is empty or null
-
+      // If the double/ triple letter/word variables match the given numbers, appropriate points are added to the score.
       if (currentScore > 0) {
         if (doubleLetter === 12) {
           accumulator = letterPoints[letterSelector];
