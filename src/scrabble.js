@@ -1,3 +1,5 @@
+class Scrabble {
+  score() {
 const calcScrabbleScore = (letter) => {
   switch (letter) {
     case "a":
@@ -48,4 +50,6 @@ const score = (string) => {
     score += calcScrabbleScore(string[i]);
   }
   return score;
-};
+}
+}};
+export default scrabble;
