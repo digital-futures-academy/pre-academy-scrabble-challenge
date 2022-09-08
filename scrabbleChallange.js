@@ -37,7 +37,7 @@ const calcScrabbleScore = (letter) => {
 };
 
 const score = (string) => {
-  if (string === null || string === "" || string === "") {
+  if (string === null || string === "" || string === " \t\n") {
     return 0;
   }
   let score = 0;
