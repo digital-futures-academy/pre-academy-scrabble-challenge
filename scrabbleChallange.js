@@ -48,6 +48,6 @@ const score = (string) => {
   }
   return score;
 };
-const result = score("");
-console.log(result); // displaying the result 
+//const result = score("");
+//console.log(result); // displaying the result 
 }
