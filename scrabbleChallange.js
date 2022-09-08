@@ -37,15 +37,16 @@ const calcScrabbleScore = (letter) => {
 };
 
 const score = (string) => {
-  if (string === null || string === "" || string === " \t\n") {
+  if (string === null || string === "" || string === " \t\n") // add a conditions as expected 
+  { 
     return 0;
   }
   let score = 0;
-  string = string.toLowerCase();
-  for (let i = 0; i < string.length; i++) {
+  string = string.toLowerCase(); // converting String in to Lowercase
+  for (let i = 0; i < string.length; i++) { // Generate a loop and add it to the score param
     score += calcScrabbleScore(string[i]);
   }
   return score;
 };
 const result = score("");
-console.log(result);
+console.log(result); // displaying the result 
