@@ -50,3 +50,4 @@ const score = (string) => {
 };
 const result = score("");
 console.log(result); // displaying the result 
+}
