@@ -42,7 +42,7 @@ class Scrabble {
     } else if(string == " \t\n"){
       this.string = "";
     }
-   else {
+      else {
       this.string = string.toLowerCase();
     }
   }
