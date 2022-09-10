@@ -1,5 +1,3 @@
-class Scrabble {
-  score() {
 const calcScrabbleScore = (letter) => {
   switch (letter) {
     case "a":
@@ -37,19 +35,24 @@ const calcScrabbleScore = (letter) => {
       return 10;
   }
 };
+class scrabble {
+  constructor(string) {
+    if (string == null) {
+      this.string = "";
+    } else {
+      this.string = string.toLowerCase();
+    }
+  }
 
-const score = (string) => {
-  if (string === null || string === "" || string === " \t\n") {
-    // add a conditions as expected
-    return 0;
+  score() {
+    let score = 0;
+    for (let i = 0; i < this.string.length; i++) {
+      // Generate a loop and add it to the score param
+      score += calcScrabbleScore(this.string[i]);
+    }
+    console.log(score);
+    return score;
   }
-  let score = 0;
-  string = string.toLowerCase(); // converting String in to Lowercase
-  for (let i = 0; i < string.length; i++) {
-    // Generate a loop and add it to the score param
-    score += calcScrabbleScore(string[i]);
-  }
-  return score;
 }
-}};
-export default scrabble;
+let scrabble6 = new scrabble(null);
+scrabble6.score(); // => 6
