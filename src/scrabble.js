@@ -35,7 +35,7 @@ const calcScrabbleScore = (letter) => {
       return 10;
   }
 };
-class scrabble {
+class Scrabble {
   constructor(string) {
     if (string == null) {
       this.string = "";
@@ -54,5 +54,4 @@ class scrabble {
     return score;
   }
 }
-let scrabble6 = new scrabble(null);
-scrabble6.score(); // => 6
+export default Scrabble;
