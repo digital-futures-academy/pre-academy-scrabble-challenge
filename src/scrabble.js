@@ -39,7 +39,10 @@ class Scrabble {
   constructor(string) {
     if (string == null) {
       this.string = "";
-    } else {
+    } else if(string == " \t\n"){
+      this.string = "";
+    }
+   else {
       this.string = string.toLowerCase();
     }
   }
