@@ -74,8 +74,8 @@ function score(word) {
 }
 //create a prompt to ask the user to input a word and console log outcome
 
-let letter = prompt("Enter a scrabble word please: ");
+// let letter = prompt("Enter a scrabble word please: ");
 
-console.log(score(letter));
+// console.log(score(letter));
 
 
