@@ -29,3 +29,27 @@ class Scrabble {
   }
 }
 export default Scrabble;
+
+let scrabble = new Scrabble('')
+scrabble.score() // => 0
+
+let scrabble = new Scrabble(" \t\n")
+scrabble.score() // => 0
+
+let scrabble = new Scrabble(null)
+scrabble.score() // => 0
+
+let scrabble = new Scrabble('a')
+scrabble.score() // => 1
+
+let scrabble = new Scrabble('f')
+scrabble.score() // => 4
+
+let scrabble = new Scrabble('street')
+scrabble.score() // => 6
+
+let scrabble = new Scrabble('quirky')
+scrabble.score() // => 22
+
+let scrabble = new Scrabble('OXYPHENBUTAZONE')
+scrabble.score() // => 41
