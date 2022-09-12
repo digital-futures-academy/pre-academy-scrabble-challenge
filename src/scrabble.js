@@ -34,6 +34,60 @@ create a prompt to ask the user to input a word and console log outcome(to help 
 
 
 //set values for each letter of the alphabet and name the variable pointScore
+// let pointScore = {
+//     A: 1, E: 1, I: 1, O: 1, U: 1, L: 1, N: 1, R: 1, S: 1, T: 1,
+//     D: 2, G: 2,
+//     B: 3, C: 3, M: 3, P: 3,
+//     F: 4, H: 4, V: 4, W: 4, Y: 4,
+//     K: 5,
+//     J: 8, X: 8,
+//     Q: 10, Z: 10
+// }
+// class Scrabble {
+
+//     constructor(word) {
+//deal with 'null' edge case with an if statement
+// if (word == null) {
+//     this.word = '';
+// } else {
+//make sure all words are set to UPPERCASE, the same as the letters i've assigned the values to.
+//         this.word = word.toUpperCase();
+//     }
+// }
+
+//create a function called 'score' with a word as its parameter
+// score() {
+
+//     let i,
+//set the total to 0 so that the sum always begins at 0    
+//sum = 0;
+//use for loop to loop through each letter of the word adding up the total of each letter score or give '0' if unknown characters are given
+// for (let i = 0; i < this.word.length; i++) {
+//     sum += pointScore[this.word[i]] || 0;
+// }
+//return the total of the sum
+// console.log(sum);
+// return sum;
+
+//create an if statement to deal with the edge cases
+// if (!word.match(/^[a-z]+$/i)) {
+//     return 0;
+// } else if (word === 'null') {
+//     return 0;
+// }
+
+//     }
+// }
+
+
+//create a prompt to ask the user to input a word and console log outcome
+
+//create a prompt to ask the user to input a word and console log outcome
+// let letter = prompt("Enter a scrabble word please: ");
+
+
+//console.log(total);
+
 let pointScore = {
     A: 1, E: 1, I: 1, O: 1, U: 1, L: 1, N: 1, R: 1, S: 1, T: 1,
     D: 2, G: 2,
@@ -43,39 +97,23 @@ let pointScore = {
     J: 8, X: 8,
     Q: 10, Z: 10
 }
-class Scrabble {
 
+class Scrabble {
     constructor(word) {
-        //deal with 'null' edge case with an if statement
         if (word == null) {
             this.word = '';
         } else {
-            //make sure all words are set to UPPERCASE, the same as the letters i've assigned the values to.
             this.word = word.toUpperCase();
         }
     }
-
-    //create a function called 'score' with a word as its parameter
     score() {
-
-        let i,
-            //set the total to 0 so that the sum always begins at 0    
-            sum = 0;
-        //use for loop to loop through each letter of the word adding up the total of each letter score or give '0' if unknown characters are given
+        let i
+        sum = 0;
         for (let i = 0; i < this.word.length; i++) {
             sum += pointScore[this.word[i]] || 0;
         }
-        //return the total of the sum
         console.log(sum);
         return sum;
-
-        //create an if statement to deal with the edge cases
-        // if (!word.match(/^[a-z]+$/i)) {
-        //     return 0;
-        // } else if (word === 'null') {
-        //     return 0;
-        // }
-
     }
 }
 let test1 = new Scrabble('');
@@ -103,11 +141,3 @@ let test8 = new Scrabble('OXYPHENBUTAZONE');
 test8.score(); // => 41
 
 export default Scrabble;
-
-//create a prompt to ask the user to input a word and console log outcome
-
-//create a prompt to ask the user to input a word and console log outcome
-let letter = prompt("Enter a scrabble word please: ");
-
-
-//console.log(total);
