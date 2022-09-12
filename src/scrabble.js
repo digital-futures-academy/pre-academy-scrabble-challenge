@@ -1,4 +1,3 @@
-//shown a 5 liner and a possible 1 liner
 const points = {
   A: 1, E: 1, I: 1, O: 1, U: 1, L: 1, N: 1,
   R: 1, S: 1, T: 1, D: 2, G: 2, B: 3, C: 3,
@@ -8,18 +7,12 @@ const points = {
 class Scrabble {
   constructor(word) { 
     if (word == null) {
-      this.word = ""; //setting the word to be empty if its foound to be null
+      this.word = ""; //assigning the word to be empty if it's found to be null
     } else {
-      this.word = word.toUpperCase(); //setting the word to be uppercase so that we can compare against the map later
+      this.word = word.toUpperCase(); //formatting word to be uppercase so that we can compare against the points map later
     }
   }
-  score() {
-/*    let totalScore = 0;                                       initialise the counter
-    for (let letter in this.word) {                             use for in to iterate through each letter
-      totalScore += points[this.word[letter]] || 0;             add the points equivalent to the score to the counter and if its not found then add the default value of 0
-    }
-    return totalScore;*/                                        
-    
+  score() {    
     return [...this.word].reduce((accumulator, letter) => (accumulator += points[letter] || 0), 0);
     //use ... to iterate through an array (strings can be treated as arrays) and then .reduce to sum the values where accumulator is the counter and letter is the current value, the first zero is if no score is found in the map and second zero is the initial value
   }
