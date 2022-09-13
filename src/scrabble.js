@@ -12,6 +12,9 @@ class Scrabble {
     
     // Write your implementation here
   }
+  let letter = prompt("Enter a scrabble word please: ");
+
+  console.log(score(letter))
   
 }
 
