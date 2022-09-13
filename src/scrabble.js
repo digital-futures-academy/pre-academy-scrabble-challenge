@@ -6,12 +6,14 @@ class Scrabble {
         i;
     word = word.toLowerCase();
     for (i = 0; i < word.length; i++) {
-        sum += newAlphabet[word[i]] || 0; // for unknown characters
+        sum += newAlphabet[word[i]] || 0; 
     }
     return sum;
     
     // Write your implementation here
   }
+  let letter = prompt("Enter a scrabble word please: "); 
+  console.log(scrabbleScore(letter))
 }
 
 export default Scrabble;
