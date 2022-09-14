@@ -59,7 +59,7 @@ create a prompt to ask the user to input a word and console log outcome(to help 
 // score() {
 
 //     let i,
-//set the total to 0 so that the sum always begins at 0    
+//set the total to 0 so that the sum always begins at 0
 //sum = 0;
 //use for loop to loop through each letter of the word adding up the total of each letter score or give '0' if unknown characters are given
 // for (let i = 0; i < this.word.length; i++) {
@@ -89,14 +89,14 @@ create a prompt to ask the user to input a word and console log outcome(to help 
 //console.log(total);
 
 let pointScore = {
-    A: 1, E: 1, I: 1, O: 1, U: 1, L: 1, N: 1, R: 1, S: 1, T: 1,
-    D: 2, G: 2,
-    B: 3, C: 3, M: 3, P: 3,
-    F: 4, H: 4, V: 4, W: 4, Y: 4,
-    K: 5,
-    J: 8, X: 8,
-    Q: 10, Z: 10
-}
+    "A": 1, "E": 1, "I": 1, "O": 1, "U": 1, "L": 1, "N": 1, "R": 1, "S": 1, "T": 1,
+    "D": 2, "G": 2,
+    "B": 3, "C": 3, "M": 3, "P": 3,
+    "F": 4, "H": 4, "V": 4, "W": 4, "Y": 4,
+    "K": 5,
+    "J": 8, "X": 8,
+    "Q": 10, "Z": 10
+};
 
 class Scrabble {
     constructor(word) {
@@ -107,15 +107,18 @@ class Scrabble {
         }
     }
     score() {
-        let i
-        sum = 0;
+
+        let sum = 0;
         for (let i = 0; i < this.word.length; i++) {
             sum += pointScore[this.word[i]] || 0;
         }
-        console.log(sum);
+        alert(sum);
         return sum;
     }
 }
+let letters = window.prompt("Enter a word: ");
+alert(sum);
+
 let test1 = new Scrabble('');
 test1.score(); // => 0
 
