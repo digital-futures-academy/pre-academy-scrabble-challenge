@@ -1,12 +1,12 @@
 
 class Scrabble {
-    constructor() {
-        this._totalScore = 0;
+    constructor(scrabble) {
+        this._scrabble = word;
     }
 
     score(word) {
         let wordScore = 0;
-        console.log(word);
+
         if (word != null) {
             console.log("yes");
             let wordU = word.toUpperCase();
@@ -38,15 +38,30 @@ class Scrabble {
                 }
 
             }
-
             return wordScore;
 
         }
-        else wordScore = 0;
-        return wordScore;
-
+        // else {
+        //   wordScore = 0;
     }
+
+
+
+
+}
+
+//};
+
+//export default Scrabble;
+
+let scrabble = new Scrabble('a')
+console.log(scrabble.score()) // => 6
+
+let mobile = {
+    brand: 'Samsung',
+    model: 'Galaxy Note 9'
 };
 
-export default Scrabble;
-
+for (let key in mobile) {
+    console.log(`${key}: ${mobile[key]}`);
+}
