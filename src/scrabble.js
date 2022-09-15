@@ -4,5 +4,6 @@ class Scrabble {
     // Write your implementation here
   }
 }
+// Edit //
 
 export default Scrabble;
