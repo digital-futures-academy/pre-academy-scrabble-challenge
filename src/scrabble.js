@@ -8,20 +8,20 @@ const totalScore = {  //initializing score as a global object variable with key 
   Q: 10, Z: 10
 } 
 class Scrabble { //class function initiated 
-  constructor(word) {  //properties assigend inside constructor method.
+  constructor(word) {  //properties assigned inside constructor method.
     if (word == null) { 
        this.word = '';
        } else {
       this.word = word.toUpperCase();
        }
-    }  //if statement wiill check if the word is null and if not it will capitalize the word
-       //so it can be read by the for loop below acccording to the values decleared in the 
+    }  //if statement will check if the entry is null, if not, it will capitalize the word
+       //so it can be read by the for loop below acccording to the values declared in the 
        //global variable.
        
   score() { 
     sum = 0; //initial score
     for (let i = 0; i < this.word.length; i++) { //loop will run through each letter/index, 
-      sum += totalScore[this.word[i]] || 0; //add the points from each index if invalid character, score will be 0
+      sum += totalScore[this.word[i]] || 0; //add the points from each index to sum variable. If invalid character, score will be 0
       } console.log(sum);
         return 0;
       }
