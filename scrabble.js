@@ -32,19 +32,18 @@ class Scrabble {
     if (word == null) {
       this.word = ' ';
     } else {
-      this.word = word.toUpperCase();
+      this.word = word.toLowerCase();
     }
   }
 
-  score = (word) =>
-    word
-      .split('')
-      .reduce(
-        (accumulator, currentValue) => (currentValue in letterScores ? accumulator + letterScores[currentValue] : accumulator,
-          0)
-      );// Write your implementation here
+  score() {
+    let sum = 0;
+    for (let i = 0; i < this.word.length; i++) {
+      sum += letterScores[this.word[i]] || 0;
+    }
+    console.log(sum);
+    return sum;
+  }
 }
-
-
 
 export default Scrabble;
