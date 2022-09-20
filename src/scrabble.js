@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-class Scrabble {
-
-  score() {
-    // Write your implementation here
-=======
 //First set each character a value
 
 const charval = [
@@ -45,8 +39,6 @@ class Scrabble {
     }
 
     return total
-
->>>>>>> Stashed changes
   }
 }
 
