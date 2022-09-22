@@ -6,10 +6,11 @@ const letter_value = {
 // Iterate through the given word, to give each letter value and sum. Iteration variable = 0, length is the number of items in the array, go from 0 to the length of the array. Assign 0 if unknown characters are found. 
 class Scrabble {
   constructor(word) { //Constructor initialises an object within a class, called when a new object is initialised with 'new'.
-    if (word == null) { this.word = ''; }
-    else (word == ' \t\n') { this.word = ''; }
+    if (word == null || word == ' \t\n') { this.word = ''; }
+    else this.word = word;                        // needed to set value of this.word
   }
   score() {
+    const word = this.word.toUpperCase(); // needed to set or use this.word and convert to uppercase
     let i,
       points = 0;
     for (i = 0; i < word.length; i++) {
