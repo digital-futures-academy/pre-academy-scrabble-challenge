@@ -23,7 +23,6 @@ class Scrabble { //class function initiated
     for (let i = 0; i < this.word.length; i++) { //loop will run through each letter/index, 
       sum += totalScore[this.word[i]] || 0; //add the points from each index to sum variable. If invalid character, score will be 0
       } console.log(sum);
-        return 0;
       }
 }
 export default Scrabble; 
