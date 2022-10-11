@@ -180,9 +180,9 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [Sophie Beard](https://www.linkedin.com/in/sophie-beard-9a9842222/) - beardsophie@outlook.com
+[Sophie Beard](https://www.linkedin.com/in/sophie-beard-9a9842222/) - beardsophie@outlook.com
 
-Project Link: [https://github.com/sophiebeard/pre-academy-scrabble-challenge](https://github.com/sophiebeard/pre-academy-scrabble-challenge)
+[https://github.com/sophiebeard/pre-academy-scrabble-challenge](https://github.com/sophiebeard/pre-academy-scrabble-challenge)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
