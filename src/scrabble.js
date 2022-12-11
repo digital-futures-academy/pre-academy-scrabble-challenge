@@ -1,7 +1,7 @@
 class Scrabble {
 
   score() {
-    // Write your implementation here
+    this_is_test = 4
   }
 }
 
