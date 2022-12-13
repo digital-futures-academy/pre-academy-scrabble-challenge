@@ -15,7 +15,10 @@ class Scrabble {
       q:10, z:10
     }; //assign each letter a score
     let totalScore = 0; //initiate variable for score of the word
-    this._word = this._word.toLowerCase(); //converts the word to lowercase
+    if (typeof this._word != 'string')  {
+      return totalScore;
+    } //if the word is invalid then it is given a automatic score of zero
+    this._word = this._word.toLowerCase().trim(); //converts the word to lowercase and gets rid of any whitespace
     for (let ch of this._word)  { //for loop to go through each character in a word
       totalScore += pointStructure[ch]; //adds the character value to the total score
     }
