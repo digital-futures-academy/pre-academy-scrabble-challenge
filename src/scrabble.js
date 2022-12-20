@@ -1,3 +1,5 @@
+//write code below
+
 class Scrabble {
 
   score() {
