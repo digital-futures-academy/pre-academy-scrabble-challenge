@@ -29,16 +29,22 @@ const lettersPoints = {
 
 class Scrabble {
   constructor(word){
-    this.word = word.toUpperCase();
+    this.word = word;
   }
 
   score() {
+    if (this.word === null || this.word === " \t\n") {
+      return 0;
+    }
+    
     let i,
     sum = 0;
     for(i = 0; i < this.word.length; i++){
-      sum += lettersPoints[this.word[i]];
+      sum += lettersPoints[this.word.toUpperCase()[i]];
     }
     return sum;
   }
 }
+
 export default Scrabble;
+
