@@ -37,7 +37,7 @@ class Scrabble {
     
     let totalPoints = 0;
 
-    if(!word || word.includes(" ")){
+    if(!word || word.includes(" ") || !word.includes(lettersValue)){
       return totalPoints;
     }
     else {
@@ -55,8 +55,8 @@ class Scrabble {
 
 export default Scrabble;
 
-// let scrabble = new Scrabble('');
-// console.log(scrabble.score()); // => 0
+let scrabble = new Scrabble('1');
+console.log(scrabble.score()); // => 0
 
 // let scrabble = new Scrabble(" \t\n")
 // console.log(scrabble.score()) // => 0
