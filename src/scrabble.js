@@ -1,6 +1,9 @@
 class Scrabble {
   
-  score(word) {
+  constructor(input) {
+    this.input = input;
+  }
+  score() {
     const lettersValue = {
       A: 1,
       E: 1,
@@ -30,41 +33,48 @@ class Scrabble {
       Z: 10,
     };
     
+    let word = this.input;
+    
     let totalPoints = 0;
 
     if(!word || word.includes(" ")){
       return totalPoints;
     }
     else {
+      
       word = word.toUpperCase();
 
       for(var i = 0; i < word.length; i++){
-  
         totalPoints += lettersValue[word[i]];
+        
       }
-      
       return totalPoints;
     }
-    
-
   }
 }
 
 export default Scrabble;
 
-// let scrabble = new Scrabble();
-// console.log(scrabble.score('')); // => 0
+// let scrabble = new Scrabble('');
+// console.log(scrabble.score()); // => 0
 
-// console.log(scrabble.score(" \t\n")) // => 0
+// let scrabble = new Scrabble(" \t\n")
+// console.log(scrabble.score()) // => 0
 
-// console.log(scrabble.score(null)) // => 0
+// let scrabble = new Scrabble(null)
+// console.log(scrabble.score()) // => 0
 
-// console.log(scrabble.score('a')) // => 1
+// let scrabble = new Scrabble('a')
+// scrabble.score() // => 1
 
-// console.log(scrabble.score('f')) // => 4
+// let scrabble = new Scrabble('f')
+// scrabble.score() // => 4
 
-// console.log(scrabble.score('street')) // => 6
+// let scrabble = new Scrabble('street')
+// scrabble.score() // => 6
 
-// console.log(scrabble.score('quirky')) // => 22
+// let scrabble = new Scrabble('quirky')
+// scrabble.score() // => 22
 
-// console.log(scrabble.score('OXYPHENBUTAZONE')) // => 41
+// let scrabble = new Scrabble('OXYPHENBUTAZONE')
+// scrabble.score() // => 41
