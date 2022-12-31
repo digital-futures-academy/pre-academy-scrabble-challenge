@@ -1,6 +1,10 @@
 class Scrabble {
   
-  score(word) {
+  constructor(input){
+
+    this.input = input;
+  }
+  score() {
     const lettersValue = {
       A: 1,
       E: 1,
@@ -30,14 +34,15 @@ class Scrabble {
       Z: 10,
     };
     
+    let word = this.input;
+    
     let totalPoints = 0;
 
-    if(!word || word.includes(" ")){
+    if(!word || word.includes(" ") || lettersValue.hasOwnProperty(word)){
       return totalPoints;
     }
     else {
       word = word.toUpperCase();
-
       for(var i = 0; i < word.length; i++){
   
         totalPoints += lettersValue[word[i]];
