@@ -51,20 +51,3 @@ class Scrabble {
 }
 
 export default Scrabble;
-
-let scrabble = new Scrabble();
-console.log(scrabble.score('')); // => 0
-
-console.log(scrabble.score(" \t\n")) // => 0
-
-console.log(scrabble.score(null)) // => 0
-
-console.log(scrabble.score('a')) // => 1
-
-console.log(scrabble.score('f')) // => 4
-
-console.log(scrabble.score('street')) // => 6
-
-console.log(scrabble.score('quirky')) // => 22
-
-console.log(scrabble.score('OXYPHENBUTAZONE')) // => 41
