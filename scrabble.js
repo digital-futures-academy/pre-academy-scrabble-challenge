@@ -1,15 +1,15 @@
 class Scrabble {
 
   constructor(word) {
-    this.word = word.toUpperCase();
+    this.word = word?.toUpperCase();
   }
 
   score() {
     var totalPoints = 0
-    if (this.word == '' || this.word == 'NULL') {
+    if (this.word == '' || this.word == null) {
       return totalPoints = 0
     } else {
-      for (let i = 0; i < word.length; i++) {
+      for (let i = 0; i < this.word.length; i++) {
         if (this.word[i] == 'A' || this.word[i] == 'E' || this.word[i] == 'I' || this.word[i] == 'O' || this.word[i] == 'U' || this.word[i] == 'L' || this.word[i] === 'N' || this.word[i] === 'R' || this.word[i] === 'S' || this.word[i] === 'T') {
           totalPoints += 1;
         } else if (this.word[i] == 'D' || this.word[i] == 'G') {
