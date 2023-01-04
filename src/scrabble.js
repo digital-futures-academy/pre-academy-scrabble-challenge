@@ -9,8 +9,7 @@ class Scrabble {
       return 0;
     }
     let arr = this._word.toUpperCase().split("");
-    //let upperCaseArr = arr.map(char => char.trim() ? char.toUpperCase() : char);
-
+    
     var array1 = ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'];
     var array2 = ['D', 'G'];
     var array3 = ['B', 'C', 'M', 'P'];
@@ -38,22 +37,6 @@ for (let i = 0; i < arr.length; i++){
     }
     }
     return totalScore;
-
-
-
-    // Write your implementation here
-    /*if (this._word == 'f') {
-      return 4;
-    }
-
-    if (this._word == 'a') {
-      return 1;
-    }
-
-    if (this._word == null) {
-      return 0;
-    }*/
-
 
   }
 }
