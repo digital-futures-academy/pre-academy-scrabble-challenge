@@ -32,3 +32,6 @@ return totalScore;
 
 export default Scrabble;
 
+
+
+
