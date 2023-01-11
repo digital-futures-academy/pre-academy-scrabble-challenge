@@ -1,0 +1,37 @@
+const onePoint = ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'];
+const twoPoints = ['D', 'G' ,];
+const threePoints = ['B', 'C', 'M', 'P'];
+const fourPoints= ['F', 'H', 'V', 'W', 'Y'];
+const fivePoints = ['K'];
+const eightPoints = ['J', 'X'];
+const tenPoints = ['Q', 'Z'];
+let result = 0;
+let answers=[];
+function answer(word) {
+    result = 0;
+    for (let i = 0; i < word.length; i++) {
+        if (onePoint.includes(word[i])) {
+            result = result + 1;
+        }
+        if (twoPoints.includes(word[i])) {
+            result = result + 2;
+        }
+        if (threePoints.includes(word[i])) {
+            result = result + 3;
+        }
+        if (fourPoints.includes(word[i])) {
+            result = result + 4;
+        }
+        if (fivePoints.includes(word[i])) {
+            result = result + 5;
+        }
+        if (eightPoints.includes(word[i])) {
+            result = result + 8;
+        }
+        if (tenPoints.includes(word[i])) {
+            result = result + 10;
+        }
+    }
+    return result;
+}
+console.log(answer('CABBAGE'))
