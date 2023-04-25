@@ -1,4 +1,3 @@
-
 class Scrabble {
 
   constructor(word) {
@@ -60,8 +59,7 @@ class Scrabble {
    return scoreSum;
   }
 }
-let scrabble = new Scrabble('OXYPHENBUTAZONE');
+let scrabble = new Scrabble('street');
 console.log(scrabble.score()); 
-
 
 export default Scrabble;
