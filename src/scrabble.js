@@ -36,17 +36,26 @@ class Scrabble {
   }
 
   score() {
-    var score = 0;
     if (this.input == null) {
-      return score;
+      return 0;
     }
+    return this.scoreForNonNullString();
+  }
+
+  scoreForNonNullString() {
+    var score = 0;
     for (var i of this.input) {
-      var charScore = this.charMap.get(i.toUpperCase());
-      if (charScore != null) {
-        score += charScore;
-      }
+      score += this.scoreForCharacter(i);
     }
     return score;
+  }
+
+  scoreForCharacter(character) {
+    var charScore = this.charMap.get(character.toUpperCase());
+    if (charScore == null) {
+      return 0;
+    }
+    return charScore;
   }
 }
 

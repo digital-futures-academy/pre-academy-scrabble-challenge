@@ -51,4 +51,28 @@ describe("Scrabble", () => {
 
     expect(scrabble.score()).toEqual(41);
   });
+
+  it('scores two letters', () => {
+    scrabble = new Scrabble('aa');
+
+    expect(scrabble.score()).toEqual(2);
+  });
+
+  it('scores three letters', () => {
+    scrabble = new Scrabble('ccc');
+
+    expect(scrabble.score()).toEqual(9);
+  });
+
+  it('scores double word', () => {
+    scrabble = new Scrabble('add me');
+
+    expect(scrabble.score()).toEqual(9);
+  });
+
+  it('scores triple word', () => {
+    scrabble = new Scrabble('add me here');
+
+    expect(scrabble.score()).toEqual(16);
+  });
 });
