@@ -37,8 +37,14 @@ class Scrabble {
 
   score() {
     var score = 0;
+    if (this.input == null) {
+      return score;
+    }
     for (var i of this.input) {
-      score += this.charMap.get(i);
+      var charScore = this.charMap.get(i.toUpperCase());
+      if (charScore != null) {
+        score += charScore;
+      }
     }
     return score;
   }
