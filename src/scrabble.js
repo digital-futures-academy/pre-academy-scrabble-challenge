@@ -1,7 +1,8 @@
 class Scrabble {
   constructor(word) {
     this.word = word ? word.toUpperCase() : '';
-
+  
+    // Define the letterScores object containing the scores of each letter in the Scrabble game
     this.letterScores = {
       'A': 1,
       'E': 1,
@@ -36,9 +37,29 @@ class Scrabble {
   }
 
   score() {
-    let total = 0;
+    if (!this.checkWordChars()) {
+      return 0
+    }
+    return this.getScore();
+  }
 
+  checkWordChars() {
+    // Loop through each character of the word
     for (let i = 0; i < this.word.length; i++) {
+      // Use hasOwnProperty() method to determine whether the character being checked is a valid key in the letterScores object
+      if (!this.letterScores.hasOwnProperty(this.word[i])) {
+        return false;
+      }
+    }
+    // If all characters are valid, return true
+    return true;
+  }
+
+  getScore() {
+    let total = 0;
+    // Loop through each character of the word
+    for (let i = 0; i < this.word.length; i++) {
+      // Add the score of the character to the total score
       total += this.letterScores[this.word[i]];
     }
     return total;
