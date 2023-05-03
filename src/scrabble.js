@@ -8,8 +8,8 @@ class Scrabble {
     "JX": 8,
     "QZ": 10
   };
-  score_table = Object.entries(this.letter_values).reduce((lookup_table, letters_score_pair) => {
-    Array.from(letters_score_pair[0]).forEach(letter => lookup_table[letter] = letters_score_pair[1]);
+  score_table = Object.entries(this.letter_values).reduce((lookup_table, [letters, score]) => {
+    for (const letter of letters) { lookup_table[letter] = score } // used to be Array.from(letters).forEach(letter => lookup_table[letter] = score);
     return lookup_table;
   }, {});
 
@@ -22,14 +22,11 @@ class Scrabble {
       this.isValidWord = false;
       //throw TypeError(`Only accepts words with letters a-z: failed on ${word}`);
     }
-    this._word = word;
+    this._word = this.isValidWord ? word.toUpperCase() : "";
   }
 
   score() {
-    if (!this.isValidWord) {
-      return 0;
-    }
-    return Array.from(this._word, letter => this.score_table[letter.toUpperCase()]).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    return Array.from(this._word, letter => this.score_table[letter]).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   }
 }
 
