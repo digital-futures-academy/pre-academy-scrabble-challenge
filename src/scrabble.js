@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 class Scrabble {
   constructor(word) {
     this._word = word;
+    this._scoreData = this.convertScoreDataToDataOBj();
   }
 
   /**
@@ -34,12 +35,27 @@ class Scrabble {
   }
 
 
+  /**
+   * takes a string parameter letter and validates the letter if it is an actual letter or whitespace/null
+   * @param {string} letter
+   * @returns an integer based on a given letter
+   */
+  validateEntry(letter) {
+    if (letter.trim() === '' || letter === null) {
+      return 0;
+    } else {
+      return parseInt(this._scoreData[letter.toUpperCase()]);
+    }
+  }
+
+  /**
+   *
+   * @returns the total word score of a given word
+   */
   calculateScore() {
     let total = 0;
-    const scoreData = this.convertScoreDataToDataOBj();
     for (const letter in this._word) {
-      if (this._word[letter].trim() === '' || this._word[letter] === null) { return 0 };
-      total += parseInt(scoreData[this._word[letter].toUpperCase()]);
+      total += this.validateEntry(this._word[letter]);
     }
     return total;
   }
@@ -51,8 +67,8 @@ class Scrabble {
    */
   score() {
     // Write your implementation here
-    let socreTotal = this.calculateScore();
-    return socreTotal
+    let scoreTotal = this.calculateScore();
+    return scoreTotal;
 
 
   }
