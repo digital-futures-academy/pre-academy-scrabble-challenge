@@ -11,9 +11,17 @@ class Scrabble {
   }
 
   loadData() {
-    const fileData = fs.readFileSync(path.join(__dirname, './wordScore.txt'));
-    const stringData = fileData.toString();
-    return stringData;
+    const fileData = fs.readFileSync(path.join(__dirname, './wordScore.txt')).toString().split('\n');
+    const returnArray = []
+    fileData.forEach((item) => { item.length > 1 && (returnArray.push(item)); });
+    return returnArray;
+  }
+
+  convertScoreDataToDataOBj() {
+    const dataArray = this.loadData();
+    const dataObject = {}
+    dataArray.forEach((ele) => { dataObject[ele.split(',')[0]] = ele.split(',')[1] })
+    return dataObject;
   }
   score() {
     // Write your implementation here
@@ -22,6 +30,6 @@ class Scrabble {
 
 export default Scrabble;
 
-// const testScrabble = new Scrabble('hello');
+const testScrabble = new Scrabble('hello');
 
-// console.log(testScrabble.loadData());
+console.log(testScrabble.convertScoreDataToDataOBj());
