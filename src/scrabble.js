@@ -34,13 +34,7 @@ class Scrabble {
   }
 
 
-  /**
-   * invokes convertScoreDataTODataOBj() and compares each letter of this._word and compares it to scoreData and
-   * adds to the total for each element.
-   * @returns total score as an Int
-   */
-  score() {
-    // Write your implementation here
+  calculateScore() {
     let total = 0;
     const scoreData = this.convertScoreDataToDataOBj();
     for (const letter in this._word) {
@@ -48,6 +42,19 @@ class Scrabble {
       total += parseInt(scoreData[this._word[letter].toUpperCase()]);
     }
     return total;
+  }
+
+  /**
+   * invokes convertScoreDataTODataOBj() and compares each letter of this._word and compares it to scoreData and
+   * adds to the total for each element.
+   * @returns total score as an Int
+   */
+  score() {
+    // Write your implementation here
+    let socreTotal = this.calculateScore();
+    return socreTotal
+
+
   }
 }
 
