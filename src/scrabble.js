@@ -5,10 +5,17 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+/**
+ * constructor takes a word and an optional scoreModifier as an array
+ * if a score modifier is not present it will pass an empty array
+ * for letter modifier an array will need to be passed as ['l' (string), modifyer (int) , letter (string)]
+ * for a word modifer and array will need to be passed as ['w' (string), modifyer (int)]
+ */
 class Scrabble {
-  constructor(word) {
+  constructor(word, scoreModifyer = []) {
     this._word = word;
     this._scoreData = this.convertScoreDataToDataOBj();
+    this._scoreModifyer = scoreModifyer;
   }
 
   /**
@@ -59,6 +66,18 @@ class Scrabble {
     }
     return total;
   }
+  /**
+   * checks to see if a score nees to be modified by wither a 2x/3x letter score or a 2x/3x word score
+   * @param {int} score
+   * @returns an int after determining if the score needs to be modified
+   */
+  modifyScore(score) {
+    if (this._scoreModifyer[0] === 'l' && this._word.includes(this._scoreModifyer[2])) {
+      return score += parseInt(this._scoreData[this._scoreModifyer[2].toUpperCase()]) * this._scoreModifyer[1] - 1;
+    } else if (this._scoreModifyer[0] === 'w') {
+      return score * this._scoreModifyer[1];
+    }
+  }
 
   /**
    * invokes convertScoreDataTODataOBj() and compares each letter of this._word and compares it to scoreData and
@@ -67,15 +86,27 @@ class Scrabble {
    */
   score() {
     // Write your implementation here
-    let scoreTotal = this.calculateScore();
-    return scoreTotal;
-
-
+    if (this._scoreModifyer.length === 0) {
+      return this.calculateScore();
+    } else {
+      return this.modifyScore(this.calculateScore());
+    }
   }
 }
 
 export default Scrabble;
 
-const testScrabble = new Scrabble('hello');
 
-console.log(testScrabble.score());
+// Test cases
+// word passed through with no modifyer
+// const testScrabble = new Scrabble('hello');
+
+// word passed through with Letter modifyer
+// const testScrabbleLetterModfied = new Scrabble('hello', ['l', 2, 'l']);
+
+// word passed with Word modifyer
+// const testScrabbleWordModified = new Scrabble('hello', ['w', 3]);
+
+// console.log(testScrabble.score());
+// console.log(testScrabbleLetterModfied.score());
+// console.log(testScrabbleWordModified.score());
