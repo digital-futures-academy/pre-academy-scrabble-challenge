@@ -20,7 +20,6 @@ class Scrabble {
     }
 
     const wordArray = this.word.toLowerCase().split("");
-
     const totalScore = wordArray.reduce((acc, letter) => {
       for (const [score, letters] of Object.entries(letterScores)) {
         if (letters.includes(letter)) {
@@ -34,8 +33,3 @@ class Scrabble {
 }
 
 export default Scrabble;
-
-const scrabble = new Scrabble("a");
-const scrabble2 = new Scrabble("cabbage");
-console.log(scrabble.score());
-console.log(scrabble2.score());
