@@ -14,6 +14,11 @@ class Scrabble {
 
   score() {
     // Write your implementation here
+
+    if (!this.word || this.word.trim().length === 0) {
+      return 0;
+    }
+
     const wordArray = this.word.toLowerCase().split("");
 
     const totalScore = wordArray.reduce((acc, letter) => {
