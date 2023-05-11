@@ -1,4 +1,4 @@
-//current final version
+//current final version - Alx-Askew
 
 class Scrabble {
 

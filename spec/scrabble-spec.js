@@ -1,4 +1,5 @@
 // Note: you shouldn't need to change anything in this file.
+//Note from user: I modfied this file to test my extended code
 
 import Scrabble from '../src/scrabble.js';
 let scrabble;
