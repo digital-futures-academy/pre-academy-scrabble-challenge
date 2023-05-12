@@ -25,35 +25,41 @@ class Scrabble {
     this._word = this.isValidWord ? word.toUpperCase() : "";
   }
 
-  score() {
-    return Array.from(this._word, letter => this.score_table[letter]).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  score(bonus_letter_index_multipliers = {}, total_word_score_multiplier = 1) {
+    return total_word_score_multiplier * Array.from(this._word, (letter, letter_index) => this.score_table[letter] * (bonus_letter_index_multipliers[letter_index] || 1)).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   }
 }
 
 export default Scrabble;
 
-/*
-let scrabble1 = new Scrabble('');
-console.log(scrabble1.score()); // => 0
+let scrabble;
 
-let scrabble2 = new Scrabble(" \t\n");
-console.log(scrabble2.score()); // => 0
+scrabble = new Scrabble('');
+console.log(scrabble.score()); // => 0
 
-let scrabble3 = new Scrabble(null);
-console.log(scrabble3.score()); // => 0
+scrabble = new Scrabble(" \t\n");
+console.log(scrabble.score()); // => 0
 
-let scrabble4 = new Scrabble('a');
-console.log(scrabble4.score()); // => 1
+scrabble = new Scrabble(null);
+console.log(scrabble.score()); // => 0
 
-let scrabble5 = new Scrabble('f');
-console.log(scrabble5.score()); // => 4
+scrabble = new Scrabble('a');
+console.log(scrabble.score()); // => 1
 
-let scrabble6 = new Scrabble('street');
-console.log(scrabble6.score()); // => 6
+scrabble = new Scrabble('f');
+console.log(scrabble.score()); // => 4
 
-let scrabble7 = new Scrabble('quirky');
-console.log(scrabble7.score()); // => 22
+scrabble = new Scrabble('street');
+console.log(scrabble.score()); // => 6
 
-let scrabble8 = new Scrabble('OXYPHENBUTAZONE');
-console.log(scrabble8.score()); // => 41
-*/
+scrabble = new Scrabble('quirky');
+console.log(scrabble.score()); // => 22
+
+scrabble = new Scrabble('OXYPHENBUTAZONE');
+console.log(scrabble.score()); // => 41
+
+scrabble = new Scrabble('Queens');
+console.log(scrabble.score()); // 15
+console.log(scrabble.score({}, 2)); // double word -> 30
+console.log(scrabble.score({ 0: 2 })); // double letter on first letter -> 25
+console.log(scrabble.score({ 0: 2, 4: 3 }, 2)); // double letter on first letter, triple on fifth letter, double word -> 54
