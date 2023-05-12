@@ -6,8 +6,9 @@ class Scrabble {
     "FHVWY": 4,
     "K": 5,
     "JX": 8,
-    "QZ": 10
-  }; // could add " ": 0 for blanks or could use bonus_multiplier of 0 for those letters.
+    "QZ": 10,
+    " ": 0 // can be used for blank letters
+  }
   score_table = Object.entries(this.letter_values).reduce((lookup_table, [letters, score]) => {
     for (const letter of letters) { lookup_table[letter] = score } // used to be Array.from(letters).forEach(letter => lookup_table[letter] = score);
     return lookup_table;
@@ -18,7 +19,7 @@ class Scrabble {
     if (typeof word != 'string') {
       this.isValidWord = false;
       //throw TypeError(`Can only compute scrabble score for a string: failed on ${word}`);
-    } else if (word.match(/[^a-zA-Z]/) !== null) {
+    } else if (word.match(/[^a-zA-Z ]/) !== null) { // changed to include spaces for blank letters
       this.isValidWord = false;
       //throw TypeError(`Only accepts words with letters a-z: failed on ${word}`);
     }
@@ -72,3 +73,8 @@ console.log(scrabble.score({}, 2)); // double word -> 30
 console.log(scrabble.score({ 0: 2 })); // double letter on first letter -> 25
 console.log(scrabble.score({ 0: 2, 4: 3 }, 2)); // double letter on first letter, triple on fifth letter, double word -> 54
 console.log(scrabble.score({ 0: 0, 1: 0 }, 3)); // two blanks (not sure this is possible in scrabble but is fine for testing) and a triple word -> 12
+
+scrabble = new Scrabble('Ze ot'); // Zelot with a blank for the 'l'
+console.log(scrabble.score());; // 13 (not 14)
+console.log(scrabble.score({ 2: 0 })); // no effect, redundent, 13
+console.log(scrabble.score({ 2: 3 })); // no effect as triple letter on a blank is still zero, 13
