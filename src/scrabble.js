@@ -41,6 +41,7 @@ class Scrabble {
 
 export default Scrabble;
 
+/*
 let scrabble;
 
 scrabble = new Scrabble('');
@@ -78,3 +79,5 @@ scrabble = new Scrabble('Ze ot'); // Zelot with a blank for the 'l'
 console.log(scrabble.score());; // 13 (not 14)
 console.log(scrabble.score({ 2: 0 })); // no effect, redundent, 13
 console.log(scrabble.score({ 2: 3 })); // no effect as triple letter on a blank is still zero, 13
+
+*/
