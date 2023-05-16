@@ -32,13 +32,13 @@ class Scrabble {
   }
 
   score() {
-    let score = 0
-
-    if (this.word === '' || this.word === null) {
-      return score
+    if (this.isWordEmpty()) {
+      return 0
     }
 
+    let score = 0
     const letters = this.word.split('')
+
     letters.forEach(letter => {
       if (this.isALetter(letter)) {
         score += this.points[letter.toUpperCase()]
@@ -48,6 +48,10 @@ class Scrabble {
     });
 
     return score
+  }
+
+  isWordEmpty() {
+    return this.word === '' || this.word === null
   }
 
   isALetter(character) {
