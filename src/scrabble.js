@@ -32,22 +32,7 @@ class Scrabble {
   }
 
   score() {
-    if (this.isWordEmpty()) {
-      return 0
-    }
-
-    // let score = 0
-    // const letters = this.word.split('')
-
-    // letters.forEach(letter => {
-    //   if (this.isALetter(letter)) {
-    //     score += this.points[letter.toUpperCase()]
-    //   } else {
-    //     return 0
-    //   }
-    // });
-
-    return this.calculateScore()
+    return this.isWordEmpty() ? 0 : this.calculateScore()
   }
 
   calculateScore() {
