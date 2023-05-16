@@ -36,6 +36,21 @@ class Scrabble {
       return 0
     }
 
+    // let score = 0
+    // const letters = this.word.split('')
+
+    // letters.forEach(letter => {
+    //   if (this.isALetter(letter)) {
+    //     score += this.points[letter.toUpperCase()]
+    //   } else {
+    //     return 0
+    //   }
+    // });
+
+    return this.calculateScore()
+  }
+
+  calculateScore() {
     let score = 0
     const letters = this.word.split('')
 
