@@ -6,7 +6,7 @@ class Scrabble {
   score() {
     let score = 0
 
-    if (this.word === '') {
+    if (this.word === '' || this.word === null) {
       return score
     }
   }
