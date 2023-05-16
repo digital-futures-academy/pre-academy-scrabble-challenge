@@ -40,9 +40,18 @@ class Scrabble {
 
     const letters = this.word.split('')
     letters.forEach(letter => {
-      score += this.points[letter.toUpperCase()]
+      if (this.isALetter(letter)) {
+        score += this.points[letter.toUpperCase()]
+      } else {
+        return 0
+      }
     });
+
     return score
+  }
+
+  isALetter(character) {
+    return /^[A-Za-z]$/.test(character);
   }
 }
 
