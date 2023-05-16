@@ -1,7 +1,14 @@
 class Scrabble {
+  constructor(word) {
+    this.word = word;
+  }
 
   score() {
-    // Write your implementation here
+    let score = 0
+
+    if (this.word === '') {
+      return score
+    }
   }
 }
 
