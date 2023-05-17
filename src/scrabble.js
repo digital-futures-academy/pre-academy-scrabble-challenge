@@ -14,6 +14,8 @@ class Scrabble {
   
   score() {
     // Write your implementation here
+    if (this.isEmptyWord() || this.isNull() || this.isWhiteSpace()) return 0;
+    return this.calculateScore()
   }
 
   transformScoringPoints() {
@@ -24,6 +26,15 @@ class Scrabble {
       }
     }
     return transformedScoring;
+  }
+  calculateScore() {
+    let score = 0;
+    for (const letter in this.transformScoringPoints()) {
+      if (this.wordLetters()[0] === letter){
+        score += parseInt(this.transformScoringPoints()[this.wordLetters()[0]]);
+    }
+  }
+    return score;
   }
 
   isEmptyWord = () => (this.word === '') ? true : false;
@@ -38,5 +49,6 @@ class Scrabble {
   }
 }
 export default Scrabble;
-const game = new Scrabble;
+const game = new Scrabble('A');
 console.log(game.transformScoringPoints());
+console.log(game.calculateScore());
