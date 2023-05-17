@@ -36,5 +36,5 @@ constructor(word) {
     }
     return score;
 }
-
+}
 export default Scrabble;
