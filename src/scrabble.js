@@ -1,14 +1,17 @@
 class Scrabble {
 
-  score(word) {
-    // Write your implementation here:
-
-    //Manage null word
+  //Constructor to manage null word and uppercase words
+  constructor(word) {
     if (word == null) {
       this.word = "";
     }
-    //change word letters to lowercase
-    word = word.toLowerCase();
+    else {
+      this.word = word.toLowerCase();
+    }
+  }
+
+  score(word) {
+
     //Partition a variable for the running sum of points
     let runningsum = 0
     //Group the points by letters so that the conditional statements below are clear and consise
@@ -21,32 +24,33 @@ class Scrabble {
     let lettergroup7 = ["q", "z"];
 
     //Iterate through the letters in the given word
-    for (i = 0; i < word.length; i += 1) {
+    for (let i = 0, n = this.word.length; i < n; i += 1) {
       //Conditional logic to assign the correct points. Checks what grouping the given letter is in and adds the corresponding point to the running sum of points.
-      if (lettergroup1.includes(word[i])) {
-        //console.log("1 point")
-        runningsum += 1
-      } else if (lettergroup2.includes(word[i])) {
-        //console.log("2 points")
-        runningsum += 2
-      } else if (lettergroup3.includes(word[i])) {
-        //console.log("3 points")
-        runningsum += 3
-      } else if (lettergroup4.includes(word[i])) {
-        //console.log("4 points")
-        runningsum += 4
-      } else if (lettergroup5.includes(word[i])) {
-        //console.log("5 points")
-        runningsum += 5
-      } else if (lettergroup6.includes(word[i])) {
-        //console.log("8 points")
-        runningsum += 8
-      } else if (lettergroup7.includes(word[i])) {
-        //console.log("10 points")
-        runningsum += 10
+      let letter = this.word[i]
+      if (lettergroup1.includes(letter)) {
+        //console.log("1 point");
+        runningsum += 1;
+      } else if (lettergroup2.includes(letter)) {
+        //console.log("2 points");
+        runningsum += 2;
+      } else if (lettergroup3.includes(letter)) {
+        //console.log("3 points");
+        runningsum += 3;
+      } else if (lettergroup4.includes(letter)) {
+        //console.log("4 points");
+        runningsum += 4;
+      } else if (lettergroup5.includes(letter)) {
+        //console.log("5 points");
+        runningsum += 5;
+      } else if (lettergroup6.includes(letter)) {
+        //console.log("8 points");
+        runningsum += 8;
+      } else if (lettergroup7.includes(letter)) {
+        //console.log("10 points");
+        runningsum += 10;
       }
     }
-    return runningsum
+    return runningsum;
 
   }
 }
