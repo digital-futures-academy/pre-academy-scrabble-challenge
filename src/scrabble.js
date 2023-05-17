@@ -3,6 +3,8 @@ class Scrabble {
   score(word) {
     // Write your implementation here:
 
+    //change word letters to lowercase
+    word = word.toLowerCase();
     //Partition a variable for the running sum of points
     let runningsum = 0
     //Group the points by letters so that the conditional statements below are clear and consise
@@ -41,6 +43,7 @@ class Scrabble {
       }
     }
     return runningsum
+
   }
 }
 
