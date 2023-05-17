@@ -15,6 +15,7 @@ class Scrabble {
   score() {
     // Write your implementation here
   }
+
   transformScoringPoints() {
     let transformedScoring = {}
     for (const letterValue in this.scoringPoints) {
@@ -24,14 +25,18 @@ class Scrabble {
     }
     return transformedScoring;
   }
+
+  isEmptyWord = () => (this.word === '') ? true : false;
+
+  isNull = () =>  (this.word === null) ? true : false;
+
+  isWhiteSpace = () => (' \t\n\r\v'.indexOf(this.word) > -1) ? true : false;
+
+  wordLetters() {
+    let letters = this.word.split('').map(letter => letter.toUpperCase());
+    return letters;
+  }
 }
-
-isEmptyWord = () => (this.word === '') ? true : false;
-
-isNull = () =>  (this.word === null) ? true : false;
-
-isWhiteSpace = () => (' \t\n\r\v'.indexOf(this.word) > -1) ? true : false;
-
 export default Scrabble;
 const game = new Scrabble;
 console.log(game.transformScoringPoints());
