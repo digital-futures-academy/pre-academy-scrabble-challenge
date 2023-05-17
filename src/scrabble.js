@@ -3,6 +3,10 @@ class Scrabble {
   score(word) {
     // Write your implementation here:
 
+    //Manage null word
+    if (word == null) {
+      this.word = "";
+    }
     //change word letters to lowercase
     word = word.toLowerCase();
     //Partition a variable for the running sum of points
