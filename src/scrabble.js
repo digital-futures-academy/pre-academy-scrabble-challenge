@@ -26,6 +26,12 @@ class Scrabble {
   }
 }
 
+isEmptyWord = () => (this.word === '') ? true : false;
+
+isNull = () =>  (this.word === null) ? true : false;
+
+isWhiteSpace = () => (' \t\n\r\v'.indexOf(this.word) > -1) ? true : false;
+
 export default Scrabble;
 const game = new Scrabble;
 console.log(game.transformScoringPoints());
