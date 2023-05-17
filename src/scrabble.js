@@ -19,13 +19,12 @@ class Scrabble {
 
   calculateScore() {
     let score = 0;
-    for (const letter in this.transformScoringPoints()) {
-      this.wordLetters().forEach(char => {
-        (char === letter) ? score += parseInt(this.transformScoringPoints()[char]) : score;
+      this.wordLetters().forEach(letter => {
+        (letter in this.transformScoringPoints()) ? score += parseInt(this.transformScoringPoints()[letter]) : score;
       })
-    }
     return score;
   }
+
   wordLetters() {
     let letters = this.word.split('').map(letter => letter.toUpperCase());
     return letters;
