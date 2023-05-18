@@ -1,44 +1,56 @@
 class Scrabble {
-  // input = {
-  //   word: "street",
-  //   letterMultipliers: [1, 3, 2, 3, 1, 2],
-  //   wordMultiplier: 2,
-  // };
   constructor(input) {
-    this.input = input;
+    this.input = this.convertInputToObj(this.isValid(input) ? input : "");
     this.lettersToPoints = {
       A: 1,
+      B: 3,
+      C: 3,
+      D: 2,
       E: 1,
+      F: 4,
+      G: 2,
+      H: 4,
       I: 1,
-      O: 1,
-      U: 1,
+      J: 8,
+      K: 5,
       L: 1,
+      M: 3,
       N: 1,
+      O: 1,
+      P: 3,
+      Q: 10,
       R: 1,
       S: 1,
       T: 1,
-      D: 2,
-      G: 2,
-      B: 3,
-      C: 3,
-      M: 3,
-      P: 3,
-      F: 4,
-      H: 4,
+      U: 1,
       V: 4,
       W: 4,
-      Y: 4,
-      K: 5,
-      J: 8,
       X: 8,
-      Q: 10,
+      Y: 4,
       Z: 10,
     };
   }
 
-  isValid() {
+  convertInputToObj(input) {
+    if (typeof input === "object") {
+      return input;
+    }
+
+    return {
+      word: input,
+      letterMultipliers: Array(input.length).fill(1),
+      wordMultiplier: 1,
+    };
+  }
+
+  isValid(input) {
     // checks for numbers, null, undefined
-    return typeof this.input === "string";
+    const isString = typeof input === "string";
+    const isWordObject =
+      typeof input?.word === "string" &&
+      typeof input?.wordMultiplier === "number";
+
+    return isString || isWordObject;
   }
 
   getPoints(char) {
@@ -48,11 +60,15 @@ class Scrabble {
 
   score() {
     // Write your implementation here
-    if (!this.isValid()) return 0;
+    let inputArr = this.input.word.split("");
+    let totalPoints = 0;
 
-    return this.input
-      .split("")
-      .reduce((prevVal, currVal) => prevVal + this.getPoints(currVal), 0);
+    for (let i = 0; i < inputArr.length; i++) {
+      totalPoints +=
+        this.getPoints(inputArr[i]) * this.input.letterMultipliers[i];
+    }
+
+    return totalPoints * this.input.wordMultiplier;
   }
 }
 
