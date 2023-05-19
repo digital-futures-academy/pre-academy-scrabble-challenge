@@ -20,9 +20,11 @@ class Scrabble {
        if (input === null || input === "")
          return sum;
       else
+      {
         input.toUpperCase().split("").forEach(function(elem, index, array) 
         sum += lettersToScore(elem);
         return sum;
+      }
   }
 }
 
