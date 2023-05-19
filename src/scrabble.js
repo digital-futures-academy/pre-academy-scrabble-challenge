@@ -13,8 +13,8 @@ class Scrabble {
     function lettersToScore(letter) {
       for (var i in letters)
       {
-        if (Object.keys(letters).indexOf((letters[index].indexOf(letter) !== -1) ? index.toString() : '-1') !== -1) 
-           return parseInt(index);
+        if (Object.keys(letters).indexOf((letters[i].indexOf(letter) !== -1) ? i.toString() : '-1') !== -1) 
+           return parseInt(i);
       }}
     var score = function(input) {
        if (input === null || input === "")
