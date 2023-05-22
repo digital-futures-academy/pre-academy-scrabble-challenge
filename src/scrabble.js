@@ -1,7 +1,6 @@
-// import { scrabbleGrid } from "./scrabbleGrid";
 import {scoringPoints} from "./scoringPoints.js"
 class Scrabble {
-  constructor(word) {
+  constructor(word, position, direction) {
     this.word = word;
   }
 
@@ -31,5 +30,3 @@ class Scrabble {
 }
 export default Scrabble;
 
-const scrabble = new Scrabble(null);
-console.log(scrabble.score())
