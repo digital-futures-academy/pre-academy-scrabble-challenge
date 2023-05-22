@@ -1,45 +1,25 @@
+import {scoringPoints} from "./scoringPoints.js"
 class Scrabble {
-  constructor(word) {
+  constructor(word, position, direction) {
     this.word = word;
-    this.scoringPoints = {
-      1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
-      2: ["D", "G"],
-      3: ["B", "C", "M", "P"],
-      4: ["F", "H", "V", "W", "Y"],
-      5: ["K"],
-      8: ["J", "X"],
-      10: ["Q", "Z"],
-    };
   }
 
   score() {
     if (this.isEmptyWord() || this.isNull() || this.isWhiteSpace()) return 0;
-    return this.calculateScore();
+    return this.#calculateScore();
   }
 
-  calculateScore() {
+  #calculateScore() {
     let score = 0;
-    this.wordLetters().forEach((letter) => {
-      letter in this.transformScoringPoints()
-        ? (score += parseInt(this.transformScoringPoints()[letter]))
-        : score;
+    this.#wordLetters().forEach((letter) => {
+      letter in scoringPoints ? score += parseInt(scoringPoints[letter]) : score 
     });
     return score;
   }
 
-  wordLetters() {
-    let letters = this.word.split("").map((letter) => letter.toUpperCase());
+  #wordLetters() {
+    let letters = this.word.split("").map((letter) => letter.toLowerCase());
     return letters;
-  }
-
-  transformScoringPoints() {
-    let transformedScoring = {};
-    for (const letterValue in this.scoringPoints) {
-      for (let i = 0; i < this.scoringPoints[letterValue].length; i++) {
-        transformedScoring[this.scoringPoints[letterValue][i]] = letterValue;
-      }
-    }
-    return transformedScoring;
   }
 
   isEmptyWord = () => (this.word === "" ? true : false);
@@ -49,3 +29,4 @@ class Scrabble {
   isWhiteSpace = () => (" \t\n\r\v".indexOf(this.word) > -1 ? true : false);
 }
 export default Scrabble;
+
