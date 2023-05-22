@@ -1,7 +1,12 @@
 import {scoringPoints} from "./scoringPoints.js"
 class Scrabble {
-  constructor(word, position, direction) {
-    this.word = word;
+  constructor(word) {
+    const regex = /[0-9$/\\&+,:;=?@#|'<>.^*()%!-]/;
+    if (regex.test(word)){
+      throw new Error ('Words can only contain letters.');
+    } else { 
+       this.word = word;
+    }
   }
 
   score() {
@@ -10,10 +15,10 @@ class Scrabble {
   }
 
   #calculateScore() {
-    let score = 0;
-    this.#wordLetters().forEach((letter) => {
-      letter in scoringPoints ? score += parseInt(scoringPoints[letter]) : score 
-    });
+    const score = this.#wordLetters().reduce((acc, letter) => 
+      letter in scoringPoints ? acc += parseInt(scoringPoints[letter]) : acc, 
+      0
+    );
     return score;
   }
 
@@ -29,4 +34,3 @@ class Scrabble {
   isWhiteSpace = () => (" \t\n\r\v".indexOf(this.word) > -1 ? true : false);
 }
 export default Scrabble;
-
