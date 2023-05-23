@@ -213,6 +213,7 @@ console.log(scrabble.doubleLetter('z'))
 console.log(scrabble.tripleLetter('a'))
 console.log(scrabble.tripleLetter('z'))
 
+//this change
 
 export default Scrabble;
 
