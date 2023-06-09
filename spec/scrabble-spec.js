@@ -53,8 +53,7 @@ describe("Scrabble", () => {
   });
 
   it("scores a double letter word", () => {
-    scrabble = new Scrabble({
-      word: "yokohama",
+    scrabble = new Scrabble("yokohama", {
       letterMultipliers: [1, 2, 1, 1, 2, 2, 1, 1],
       wordMultiplier: 1,
     });
@@ -63,8 +62,7 @@ describe("Scrabble", () => {
   });
 
   it("scores a double letter and triple word", () => {
-    scrabble = new Scrabble({
-      word: "height",
+    scrabble = new Scrabble("height", {
       letterMultipliers: [2, 2, 1, 1, 1, 2],
       wordMultiplier: 3,
     });
@@ -72,13 +70,42 @@ describe("Scrabble", () => {
     expect(scrabble.score()).toEqual(57);
   });
 
-  it("scores a double word", () => {
-    scrabble = new Scrabble({
-      word: "bricks",
+  it("scores a double letter word", () => {
+    scrabble = new Scrabble("bricks", {
       letterMultipliers: [1, 1, 1, 1, 1, 1],
       wordMultiplier: 2,
     });
 
     expect(scrabble.score()).toEqual(28);
   });
+
+  // it("scores a double letter word", () => {
+  //   scrabble = new Scrabble({
+  //     word: "yokohama",
+  //     letterMultipliers: [1, 2, 1, 1, 2, 2, 1, 1],
+  //     wordMultiplier: 1,
+  //   });
+
+  //   expect(scrabble.score()).toEqual(26);
+  // });
+
+  // it("scores a double letter and triple word", () => {
+  //   scrabble = new Scrabble({
+  //     word: "height",
+  //     letterMultipliers: [2, 2, 1, 1, 1, 2],
+  //     wordMultiplier: 3,
+  //   });
+
+  //   expect(scrabble.score()).toEqual(57);
+  // });
+
+  // it("scores a double word", () => {
+  //   scrabble = new Scrabble({
+  //     word: "bricks",
+  //     letterMultipliers: [1, 1, 1, 1, 1, 1],
+  //     wordMultiplier: 2,
+  //   });
+
+  //   expect(scrabble.score()).toEqual(28);
+  // });
 });
