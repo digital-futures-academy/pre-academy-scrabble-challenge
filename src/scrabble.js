@@ -1,9 +1,14 @@
 class Scrabble {
-  score(word) {
-    if (!word || typeof word !== 'string') {
+  constructor(word) {
+    this.word = word;
+  }
+  score() {
+    // Write your implementation here
+    if (!this.word) {
       return 0;
     }
 
+    let score = 0;
     const letterValues = {
       'A': 1, 'E': 1, 'I': 1, 'O': 1, 'U': 1, 'L': 1, 'N': 1, 'R': 1, 'S': 1, 'T': 1,
       'D': 2, 'G': 2,
@@ -14,18 +19,17 @@ class Scrabble {
       'Q': 10, 'Z': 10
     };
 
-    let score = 0;
-    const wordUpperCase = word.toUpperCase();
-
-    for (let i = 0; i < wordUpperCase.length; i++) {
-      const letter = wordUpperCase[i];
-      score += letterValues[letter] || 0;
+    for (let i = 0; i < this.word.length; i++) {
+      let letter = this.word[i].toUpperCase();// Convert the letter to uppercase for case-insensitive 
+      if (letter in letterValues) {  // Check if the letter exists in the letterValues object
+        score += letterValues[letter]; // Add the letter's score to the total score
+      }
     }
 
     return score;
   }
 }
-
+// Test cases
 let scrabble1 = new Scrabble('');
 console.log(scrabble1.score());    // => 0
 
