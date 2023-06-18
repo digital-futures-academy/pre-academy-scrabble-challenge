@@ -13,8 +13,8 @@ class Scrabble {
     };
 
     let score = 0;
-    for (let i = 0; i < word.length; i++) {
-      const letter = word[i];
+    for (let i = 0; i < this.word.length; i++) {
+      const letter = this.word[i];
       const letterScore = letterValues[letter];
       score += letterScore ? letterScore : 0;
     }
