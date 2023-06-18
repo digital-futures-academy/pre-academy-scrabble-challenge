@@ -1,6 +1,5 @@
 class Scrabble {
   score(word) {
-    // Write your implementation here
     if (!word || typeof word !== 'string') {
       return 0;
     }
