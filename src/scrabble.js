@@ -26,4 +26,28 @@ class Scrabble {
   }
 }
 
+let scrabble1 = new Scrabble('');
+console.log(scrabble1.score());    // => 0
+
+let scrabble2 = new Scrabble(" \t\n");
+console.log(scrabble2.score());    // => 0
+
+let scrabble3 = new Scrabble(null);
+console.log(scrabble3.score());    // => 0
+
+let scrabble4 = new Scrabble('a');
+console.log(scrabble4.score());    // => 1
+
+let scrabble5 = new Scrabble('f');
+console.log(scrabble5.score());    // => 4
+
+let scrabble6 = new Scrabble('street');
+console.log(scrabble6.score());    // => 6
+
+let scrabble7 = new Scrabble('quirky');
+console.log(scrabble7.score());    // => 22
+
+let scrabble8 = new Scrabble('OXYPHENBUTAZONE');
+console.log(scrabble8.score());    // => 41
+
 export default Scrabble;
