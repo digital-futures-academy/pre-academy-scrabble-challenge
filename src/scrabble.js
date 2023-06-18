@@ -1,7 +1,13 @@
 class Scrabble {
+  constructor(word) {
+    if (word) {
+      this.word = word.toUpperCase();
+    } else {
+      this.word = '';
+    }
+  }
 
   score() {
-    // Write your implementation here
     const letterValues = {
       'A': 1, 'E': 1, 'I': 1, 'O': 1, 'U': 1, 'L': 1, 'N': 1, 'R': 1, 'S': 1, 'T': 1,
       'D': 2, 'G': 2,
@@ -13,14 +19,19 @@ class Scrabble {
     };
 
     let score = 0;
+
     for (let i = 0; i < this.word.length; i++) {
       const letter = this.word[i];
       const letterScore = letterValues[letter];
-      score += letterScore ? letterScore : 0;
+
+      if (letterScore) {
+        score += letterScore;
+      }
     }
 
     return score;
   }
 }
+
 
 export default Scrabble;
