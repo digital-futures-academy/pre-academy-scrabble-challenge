@@ -16,7 +16,7 @@ class Scrabble {
     for (let i = 0; i < this.word.length; i++) {
       const letter = this.word[i];
       const letterScore = letterValues[letter];
-      score += letterScore || 0;
+      score += letterScore ? letterScore : 0;
     }
 
     return score;
