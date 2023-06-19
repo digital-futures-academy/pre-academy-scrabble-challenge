@@ -26,28 +26,28 @@ class Scrabble {
 
 
 let scrabble1 = new Scrabble();
-console.log(scrabble1.score(''));          // => 0
+scrabble1.score('');          // => 0
 
 let scrabble2 = new Scrabble();
-console.log(scrabble2.score(' \t\n'));     // => 0
+scrabble2.score(' \t\n');     // => 0
 
 let scrabble3 = new Scrabble();
-console.log(scrabble3.score(null));        // => 0
+scrabble3.score(null);        // => 0
 
 let scrabble4 = new Scrabble();
-console.log(scrabble4.score('a'));         // => 1
+scrabble4.score('a');         // => 1
 
 let scrabble5 = new Scrabble();
-console.log(scrabble5.score('f'));         // => 4
+scrabble5.score('f');         // => 4
 
 let scrabble6 = new Scrabble();
-console.log(scrabble6.score('street'));    // => 6
+scrabble6.score('street');    // => 6
 
 let scrabble7 = new Scrabble();
-console.log(scrabble7.score('quirky'));    // => 22
+scrabble7.score('quirky');    // => 22
 
 let scrabble8 = new Scrabble();
-console.log(scrabble8.score('OXYPHENBUTAZONE'));    // => 41
+scrabble8.score('OXYPHENBUTAZONE');    // => 41
 
 
 export default Scrabble;
