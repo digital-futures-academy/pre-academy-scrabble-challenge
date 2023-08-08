@@ -23,7 +23,9 @@ $ ./node_modules/jasmine/bin/jasmine.js
 ```
 3. In GitHub, [open a Pull Request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) from your forked repository to the challenge repository.
 4. Implement the criteria below locally and [push your code](https://docs.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository-using-the-command-line) to your repository! Every push to a branch that has an open Pull Request will update it automatically with your changes.
-5. Check the status of the automated tests on the Pull Request - update your implementation if needed.
+5. Check the status of the automated tests on the Pull Request - if successful you should see something like this:
+
+   
 
 # Task
 
@@ -88,9 +90,12 @@ let scrabble = new Scrabble('OXYPHENBUTAZONE')
 scrabble.score() // => 41
 ```
 
-## Extended Acceptance Criteria
+## Extended Acceptance Criteria - just for fun - no tests exist for these
 > Each `Scrabble` method should be no more than 5 lines and contain no more than 5 operations.
 
 > You can play a double or a triple letter.
 
 > You can play a double or a triple word.
+
+Can you write tests for these, based on the the test structure above?
+
