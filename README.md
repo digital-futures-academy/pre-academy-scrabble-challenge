@@ -27,11 +27,11 @@ $ ./node_modules/jasmine/bin/jasmine.js
 
 ![Pull Request Status](./img/pull-request-status.png)
 
-- You are not allowed to merge your changes into the digital-futures-academy/pre-academy-scrabble-challenge repository at this point
 - You should see that the 4 checks have passed - essentially these run the tests that we have provided for the Standard Criteria
-   - if these do not pass, your solution is not correct and you need to revisit your code
-   - you will not need to make another pull request, simply add and commit further changes to your code and recheck the status again
-- Merging is blocked - you cannot merge your changes but rest assured, the team can see your pull request from our end!pull-request-statis
+  - if these do not pass, your solution is not correct and you need to revisit your code
+  - you will not need to make another pull request, simply add and commit further changes to your code and recheck the status again
+- You are not allowed to merge your changes into the digital-futures-academy/pre-academy-scrabble-challenge repository at this point
+- Merging is blocked - you cannot merge your changes but rest assured, the team can see your pull request from our end!
 
 # Task
 
@@ -41,15 +41,15 @@ Given a word, compute the scrabble score for that word.
 
 You'll need these:
 
-| Letter                        | Value  |
-| ----                          |  ----  |
-| A, E, I, O, U, L, N, R, S, T  |     1  |
-| D, G                          |     2  |
-| B, C, M, P                    |     3  |
-| F, H, V, W, Y                 |     4  |
-| K                             |     5  |
-| J, X                          |     8  |
-| Q, Z                          |     10 |
+| Letter                       | Value |
+| ---------------------------- | ----- |
+| A, E, I, O, U, L, N, R, S, T | 1     |
+| D, G                         | 2     |
+| B, C, M, P                   | 3     |
+| F, H, V, W, Y                | 4     |
+| K                            | 5     |
+| J, X                         | 8     |
+| Q, Z                         | 10    |
 
 Example
 "cabbage" should be scored as worth 14 points:
