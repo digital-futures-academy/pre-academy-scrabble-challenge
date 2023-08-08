@@ -25,7 +25,13 @@ $ ./node_modules/jasmine/bin/jasmine.js
 4. Implement the criteria below locally and [push your code](https://docs.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository-using-the-command-line) to your repository! Every push to a branch that has an open Pull Request will update it automatically with your changes.
 5. Check the status of the automated tests on the Pull Request - if successful you should see something like this:
 
-   
+![Pull Request Status](./img/pull-request-status.png)
+
+- You are not allowed to merge your changes into the digital-futures-academy/pre-academy-scrabble-challenge repository at this point
+- You should see that the 4 checks have passed - essentially these run the tests that we have provided for the Standard Criteria
+   - if these do not pass, your solution is not correct and you need to revisit your code
+   - you will not need to make another pull request, simply add and commit further changes to your code and recheck the status again
+- Merging is blocked - you cannot merge your changes but rest assured, the team can see your pull request from our end!pull-request-statis
 
 # Task
 
