@@ -88,7 +88,7 @@ let scrabble = new Scrabble('OXYPHENBUTAZONE')
 scrabble.score() // => 41
 ```
 
-## Extended Acceptance Criteria
+## Extended Acceptance Criteria - Optional
 > Each `Scrabble` method should be no more than 5 lines and contain no more than 5 operations.
 
 > You can play a double or a triple letter.
