@@ -1,0 +1,23 @@
+name: Verify Pull Request Code
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 14.x, 16.x, 18.x, 20.x ]
+
+    steps:
+      - uses: digital-futures-academy/checkout@v3.0.0
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: digital-futures-academy/setup-node@v3.0.0
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
